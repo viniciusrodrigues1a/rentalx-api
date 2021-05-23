@@ -7,7 +7,7 @@ import {
 class CategoriesRepository implements ICategoriesRepository {
   private categories: Category[];
 
-  private static INSTANCE;
+  private static INSTANCE: CategoriesRepository;
 
   private constructor() {
     this.categories = [];
