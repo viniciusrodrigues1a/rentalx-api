@@ -4,6 +4,7 @@ import swaggerUi from "swagger-ui-express";
 
 import { categoriesRoutes } from "./routes/categories.routes";
 import { specificationsRoutes } from "./routes/specifications.routes";
+import { usersRoutes } from "./routes/users.routes";
 import swaggerConfig from "./swagger.json";
 
 import "./database";
@@ -17,5 +18,6 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerConfig));
 
 app.use("/categories", categoriesRoutes);
 app.use("/specifications", specificationsRoutes);
+app.use("/users", usersRoutes);
 
 app.listen(3333, () => console.log("Server is running"));
