@@ -2,9 +2,7 @@ import "reflect-metadata";
 import express from "express";
 import swaggerUi from "swagger-ui-express";
 
-import { categoriesRoutes } from "./routes/categories.routes";
-import { specificationsRoutes } from "./routes/specifications.routes";
-import { usersRoutes } from "./routes/users.routes";
+import { router } from "./routes";
 import swaggerConfig from "./swagger.json";
 
 import "./database";
@@ -16,8 +14,6 @@ app.use(express.json());
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerConfig));
 
-app.use("/categories", categoriesRoutes);
-app.use("/specifications", specificationsRoutes);
-app.use("/users", usersRoutes);
+app.use(router);
 
 app.listen(3333, () => console.log("Server is running"));
